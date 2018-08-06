@@ -20,38 +20,39 @@
     --light: #303030;
     --dark: #303030; */
 
+:root {
+  font-size: 0.8rem;
+}
 
 header {
+  align-items: center;
   background-color: #375a7f;;
   display: flex;
-  /* flex-direction: column; */
-  padding: 2rem;
-  align-items: center;
   justify-content: flex-start;
+  padding: 1rem;
 }
 
 .logo-div {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 10%;
   font-size: 2rem;
+  margin-left: 10%;
   width: 50%;
 }
 
 .logo-div h1 {
+  color: white;
   font-size: 5rem;
   font-weight: 600;
-  color: white;
-  text-shadow: 2px 2px 2px black;
   margin-bottom: 0 !important;
+  text-shadow: 2px 2px 2px black;
 }
 
 .logo-div small {
-  font-style: italic;
-  font-size: 1.2rem;
-  /* margin-left: 2rem; */
   color: #3498DB;
+  font-size: 1.2rem;
+  font-style: italic;
   text-shadow: 2px 2px 20px black;
 }
 
@@ -64,8 +65,8 @@ header {
 }
 
 .search-div input {
+  font-size: 1.4rem;
   height: 2rem;
-  font-size: 1.8rem;
 }
 
 .toggle-btn {
@@ -73,9 +74,9 @@ header {
   background-position: center;
   background-size: contain;
   background-color: white;
+  float: right;
   height: 30px;
   width: 30px;
-  float: right;
 }
 
 .toggle-btn.down {
@@ -104,7 +105,7 @@ header {
 .tag-section label {
   margin-right: 0.6rem;
   margin-top: 0.6rem;
-  width: 140px;
+  width: 130px;
 }
 
 
@@ -132,8 +133,8 @@ ul {
 
 .links ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-title {
@@ -142,16 +143,16 @@ ul {
   margin-bottom: 0 !important;
 }
 
-.card-title h2 {
-  color: #3498DB ;
-}
-
 .card-title img {
   height: 25px;
   width: 25px;
   margin-top: 4px;
   margin-right: 1rem;
   margin-left: 1rem;
+}
+
+.card-title h2 {
+  color: #3498DB ;
 }
 
 .card-text {
@@ -163,12 +164,12 @@ ul {
 }
 
 .card-link {
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   margin-left: 3.7rem;
+  text-overflow: ellipsis;
 }
 
 .btn-dark {
-  font-size: 18px;
+  font-size: 1.2rem;
   text-shadow: 2px 2px 4px black;
-  /* width: 110px; */
 }
