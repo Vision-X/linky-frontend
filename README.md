@@ -20,9 +20,18 @@ Pt. 2
 
 - [] Filter functionality - Checkboxes!
  - [x] buttons for each tag (tag filter button box)
-    - [] onClick --- filter by that tag name
-    - [] render/return filtered elements
+    - [x] onClick --- filter by that tag name
+    - [x] render/return filtered elements
+
+
+Pt.3 - Morning Goals! (on filter-mod branch!!!!!)
 
 - [] Search Filter - Dynamically typed text!
   - [] filter by search text input
     - [] return items that match on keyup
+
+- [] Refactor codebase
+
+- [] clean up style
+
+- [] populate DB with all my links

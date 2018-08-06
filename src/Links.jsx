@@ -6,8 +6,24 @@ export default class Links extends Component {
     return (
       <section className="links">
         <ul>
-            {data.filter(obj => filterStuff.length ? obj.stringarray.find(v => filterStuff.includes(v)) : 1
-            ).map(item => {
+            {data.reduce(function(acc, val) {
+              let count = 0;
+              if (filterStuff.length) {
+                for (let i = 0; i < val.stringarray.length; i++) {
+                  for (let j = 0; j < filterStuff.length; j++) {
+                    if (val.stringarray[i] === filterStuff[j]) {
+                      count++;
+                      if (count === filterStuff.length) {
+                        acc.push(val);
+                      }
+                    }
+                  }
+                } return acc.sort((a,b) => b.title < a.title);
+              } else {
+                  return data.sort((a,b) => b.title < a.title)
+              }
+            },
+            []).map(item => {
               return (
                 <li className="card" key={Math.random(new Date())}>
                   <div className="card-body">
@@ -17,7 +33,7 @@ export default class Links extends Component {
                     </div>
                     <h4 className="card-text">{item.description}</h4>
                     <a className="card-link" href={item.url} target="_blank">{item.url}</a>
-                    <div className="tag-list">
+                    {/*<div className="tag-list">
                       <ul>
                       {item.stringarray.map(tag => {
                         return (
@@ -25,7 +41,7 @@ export default class Links extends Component {
                         )
                       })}
                       </ul>
-                    </div>
+                    </div>*/}
                   </div>
                 </li>
               )
