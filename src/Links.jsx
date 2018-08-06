@@ -6,8 +6,25 @@ export default class Links extends Component {
     return (
       <section className="links">
         <ul>
-            {data.filter(obj => filterStuff.length ? obj.stringarray.find(v => filterStuff.includes(v)) : 1
-            ).map(item => {
+            {data.reduce(function(acc, val) {
+              let count = 0;
+              if (filterStuff.length) {
+                for (let i = 0; i < val.stringarray.length; i++) {
+                  for (let j = 0; j < filterStuff.length; j++) {
+                    if (val.stringarray[i] === filterStuff[j]) {
+                      count++;
+                      if (count === filterStuff.length) {
+                        acc.push(val);
+                      }
+                    }
+                  }
+                }
+                 return acc;
+              } else {
+                return data;
+              }
+            },
+            []).map(item => {
               return (
                 <li className="card" key={Math.random(new Date())}>
                   <div className="card-body">
