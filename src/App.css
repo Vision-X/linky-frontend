@@ -21,7 +21,7 @@
     --dark: #303030; */
 
 :root {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 header {
@@ -51,7 +51,7 @@ header {
 
 .logo-div small {
   color: #3498DB;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-style: italic;
   text-shadow: 2px 2px 20px black;
 }
