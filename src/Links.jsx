@@ -18,10 +18,9 @@ export default class Links extends Component {
                       }
                     }
                   }
-                }
-                 return acc;
+                } return acc.sort((a,b) => b.title < a.title);
               } else {
-                return data;
+                  return data.sort((a,b) => b.title < a.title)
               }
             },
             []).map(item => {
@@ -34,7 +33,7 @@ export default class Links extends Component {
                     </div>
                     <h4 className="card-text">{item.description}</h4>
                     <a className="card-link" href={item.url} target="_blank">{item.url}</a>
-                    <div className="tag-list">
+                    {/*<div className="tag-list">
                       <ul>
                       {item.stringarray.map(tag => {
                         return (
@@ -42,7 +41,7 @@ export default class Links extends Component {
                         )
                       })}
                       </ul>
-                    </div>
+                    </div>*/}
                   </div>
                 </li>
               )

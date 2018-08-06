@@ -19,13 +19,12 @@ class App extends Component {
         arr.push(response[key]);
       }
       this.setState({linkData: arr})
-      console.log("link data!", this.state.linkData);
       this.populateTagArray();
     }
     return fetch(url)
            .then(response => response.json())
            .then(dataGetter)
-           .catch(console.log("that sucks!"))
+           .catch(console.error)
   }
 
   populateTagArray = () => {
@@ -37,37 +36,17 @@ class App extends Component {
     this.setState({ tags: filteredTagAry})
   }
 
-  renderWhen = () => {
-    if (this.state.selected.length > 0) {
-      <Fragment>
-        <Header />
-        <Search />
-        <section className="tag-section">
-          <div className="btn-group btn-group-toggle" data-toggle="buttons">
-              {this.state.tags.map(tag => {
-                  return (
-                        <label htmlFor={tag} className="btn btn-primary" onClick={this._onClick} >
-                          <input type="checkbox" />
-                          {tag}
-                        </label>
-                  )}
-                )}
-          </div>
-        </section>
-        <Links data={this.state.linkData[0]} filterStuff={this.state.selected}/>
-      </Fragment>
-    }
-
+  renderWhenFetched = () => {
     if (this.state.linkData) {
       return (
         <Fragment>
           <Header />
-          <Search />
-          <section className="tag-section">
+          <button className="toggle-btn up" onClick={this._showHide}></button>
+          <section className="tag-section show">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                {this.state.tags.map(tag => {
+                {this.state.tags.sort().map(tag => {
                     return (
-                          <label htmlFor={tag} className="btn btn-primary" onClick={this._onClick} >
+                          <label htmlFor={tag} className="btn btn-dark" onClick={this._onClick} >
                             <input type="checkbox" />
                             {tag}
                           </label>
@@ -82,12 +61,20 @@ class App extends Component {
       return (
       <Fragment>
         <Header />
-        <Search />
         <p>"No data Yet!"</p>
       </Fragment>
     )
 
     }
+  }
+
+  _showHide = (event) => {
+    event.target.classList.contains("up") ? event.target.setAttribute('class', 'toggle-btn down')
+                                          : event.target.setAttribute('class', 'toggle-btn up')
+    let show = event.target.nextSibling;
+    console.log(show.classList);
+    show.classList.contains("show") ? show.setAttribute('class', 'tag-section hide')
+                                    : show.setAttribute('class', 'tag-section show')
   }
 
   _onClick = (event) => {
@@ -109,7 +96,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {this.renderWhen()}
+        {this.renderWhenFetched()}
       </Fragment>
     );
   }
@@ -117,15 +104,21 @@ class App extends Component {
 
 const Header = () =>
   <header>
-    <h1>Linky!</h1>
-    <small>A site for parsing through resources!</small>
+    <div className="logo-div">
+      <h1>Linky!</h1>
+      <small>A site for parsing through resources!</small>
+    </div>
+    <div className="search-div">
+      <label htmlFor="search-input"></label>
+      <input type="text" name="search-input" placeholder="Search All Links..." />
+    </div>
   </header>
 
-const Search = () =>
+{/*const Search = () =>
   <section className="search-section">
     <label htmlFor="search-input">Search all links</label>
     <input type="text" name="search-input" placeholder="Enter your search here" />
-  </section>
+  </section>*/}
 
 
 export default App;
