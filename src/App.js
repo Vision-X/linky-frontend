@@ -54,7 +54,7 @@ class App extends Component {
                   )}
             </div>
           </section>
-          <Links data={this.state.linkData[0]} filterStuff={this.state.selected}/>
+          <Links data={this.state.linkData[0]} filterStuff={this.state.selected} />
         </Fragment>
       )
     } else {
@@ -105,20 +105,14 @@ class App extends Component {
 const Header = () =>
   <header>
     <div className="logo-div">
-      <h1>Linky!</h1>
-      <small>A site for parsing through resources!</small>
+      <h1>LiNKY!</h1>
+      <small>A better way to save links!</small>
     </div>
     <div className="search-div">
       <label htmlFor="search-input"></label>
       <input type="text" name="search-input" placeholder="Search All Links..." />
     </div>
   </header>
-
-{/*const Search = () =>
-  <section className="search-section">
-    <label htmlFor="search-input">Search all links</label>
-    <input type="text" name="search-input" placeholder="Enter your search here" />
-  </section>*/}
 
 
 export default App;
