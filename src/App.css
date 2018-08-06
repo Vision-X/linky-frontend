@@ -173,3 +173,25 @@ ul {
   font-size: 1.2rem;
   text-shadow: 2px 2px 4px black;
 }
+
+.link-input {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10% 0 10%;
+  width: 80%;
+  height: 100vh;
+  color: white;
+}
+
+.link-input label {
+  margin-top: 2rem;
+}
+
+.link-input input {
+  margin-top: 2rem;
+}
+
+#message {
+  color: white;
+  font-size: 2rem;
+}
