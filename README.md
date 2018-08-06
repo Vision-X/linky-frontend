@@ -24,7 +24,7 @@ Pt. 2
     - [x] render/return filtered elements
 
 
-Pt.3 - Morning Goals!
+Pt.3 - Morning Goals! (on filter-mod branch!!!!!)
 
 - [] Search Filter - Dynamically typed text!
   - [] filter by search text input

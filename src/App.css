@@ -99,4 +99,16 @@ ul {
   width: 25px;
   margin-top: 4px;
   margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.card-text {
+  margin-left: 1rem;
+  margin-top: 6px;
+  font-style: italic;
+  color: #fd7e14;
+}
+
+.card-link {
+  margin-left: 1rem;
 }
