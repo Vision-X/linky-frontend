@@ -193,6 +193,11 @@ ul {
   margin-top: 2rem;
 }
 
+.multi-tag {
+  display: flex;
+  justify-content: space-between;
+}
+
 #message {
   color: white;
   font-size: 2rem;

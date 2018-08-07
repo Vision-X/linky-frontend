@@ -34,7 +34,7 @@ class App extends Component {
       finalAry.push(...link['stringarray'])
     })
     let filteredTagAry = [...new Set(finalAry)];
-    this.setState({ tags: filteredTagAry})
+    return this.setState({ tags: filteredTagAry})
   }
 
   renderWhenFetched = () => {
@@ -70,33 +70,31 @@ class App extends Component {
                   )}
             </div>
           </section>
-          <Links className="Links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>
+          <Links className="links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>
         </Fragment>
       )
     } else {
       return (
-      <Fragment>
-        <header>
-          <div className="logo-div">
-            <h1>LiNKY!</h1>
-            <small>A better way to save links!</small>
-          </div>
-          <div className="search-div">
-            <label htmlFor="search-input"></label>
-            <input
-              type="text"
-              name="search-input"
-              placeholder="Search All Links"
-              value={this.state.search}
-              onChange={this._updateSearch.bind(this)}
-            />
-          </div>
-        </header>
-        <p>"No data Yet!"</p>
-      </Fragment>
-    )
-
-    }
+        <Fragment>
+          <header>
+            <div className="logo-div">
+              <h1>LiNKY!</h1>
+              <small>A better way to save links!</small>
+            </div>
+            <div className="search-div">
+              <label htmlFor="search-input"></label>
+              <input
+                type="text"
+                name="search-input"
+                placeholder="Search All Links"
+                value={this.state.search}
+                onChange={this._updateSearch.bind(this)}
+              />
+            </div>
+          </header>
+          <p>"No data Yet!"</p>
+        </Fragment>
+    )}
   }
 
   _updateSearch = (event) => {
@@ -136,24 +134,5 @@ class App extends Component {
     );
   }
 }
-
-{/*const Header = () =>
-  <header>
-    <div className="logo-div">
-      <h1>LiNKY!</h1>
-      <small>A better way to save links!</small>
-    </div>
-    <div className="search-div">
-      <label htmlFor="search-input"></label>
-      <input
-        type="text"
-        name="search-input"
-        placeholder="Search All Links"
-        value={this.state.search}
-        onChange={this._updateSearch.bind(this)}
-      />
-    </div>
-  </header>*/}
-
 
 export default App;

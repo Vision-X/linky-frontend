@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 export default class AddLink extends Component {
 
@@ -27,16 +27,23 @@ export default class AddLink extends Component {
   };
 
   getFormData = () => {
+    let stringAry = [];
+    if (this.tags1.value) { stringAry.push(this.tags1.value); }
+    if (this.tags2.value) { stringAry.push(this.tags2.value); }
+    if (this.tags3.value) { stringAry.push(this.tags3.value); }
+    if (this.tags4.valye) { stringAry.push(this.tags4.value); }
     return {
       title: this.title.value,
       description: this.description.value,
-      url: this.myUrl.value
+      url: this.myUrl.value,
+      stringarray: '{' + stringAry + '}'
     };
   };
 
   onSubmit = (e) => {
     e.preventDefault();
     this.postFormData();
+    document.querySelector(".link-input").reset();
   };
 
   render() {
@@ -69,12 +76,32 @@ export default class AddLink extends Component {
           name="myUrl"
         />
         <label>Tags:</label>
-        <input
-          id="tags"
-          ref={input => (this.tags = input)}
-          type="text"
-          name="tags"
-        />
+        <div className="multi-tag">
+          <input
+            id="tags1"
+            ref={input => (this.tags1 = input)}
+            type="text"
+            name="tags"
+          />
+          <input
+            id="tags2"
+            ref={input => (this.tags2 = input)}
+            type="text"
+            name="tags"
+          />
+          <input
+            id="tags3"
+            ref={input => (this.tags3 = input)}
+            type="text"
+            name="tags"
+          />
+          <input
+            id="tags4"
+            ref={input => (this.tags4 = input)}
+            type="text"
+            name="tags"
+          />
+        </div>
       <input id="add-link" className="btn btn-primary" type="submit" value="add link" />
       <p id="message"></p>
     </form>
