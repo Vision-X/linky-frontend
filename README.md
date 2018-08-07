@@ -1,6 +1,6 @@
 # Linky - Front-End build with React
 
-## Building the frontend!
+### Pt.1  Building the frontend!
 
 - [x] create react app boilerplate
  - [x] Wipe crap out we dont need
@@ -9,7 +9,7 @@
  - [] tag filter button box
  - [x] Build showAll component (in App.js for now)
 
-Pt. 2
+### Pt. 2
 
  - [x] Basic style existing components
  - [x] bring in Bootstrap/Bootswatch
@@ -24,20 +24,17 @@ Pt. 2
     - [x] render/return filtered elements
 
 
-Pt.3 - Late night Goals (Day1)! (on filter-mod branch!!!!!)
+### Pt.3 - Late night Goals (Day1)! (on filter-mod branch!!!!!)
 
 - [x] Search Filter - Dynamically typed text!
-  - []x filter by search text input
+  - [x] filter by search text input
     - [x] return items that match on keyup
-
 - [x] Refactor codebase
-
 - [x] clean up style
-
 - [x] populate DB with all my links
 
 
-Pt. 4 - (Day2) final crunch
+### Pt. 4 - (Day2) final crunch
 
 - [] Fix known issues, including...
   - [] link wraps on card too far left
