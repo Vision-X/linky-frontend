@@ -54,7 +54,7 @@ class App extends Component {
                   )}
             </div>
           </section>
-          <Links data={this.state.linkData[0]} filterStuff={this.state.selected} />
+          <Links className="Links" data={this.state.linkData[0]} filterStuff={this.state.selected} />
         </Fragment>
       )
     } else {

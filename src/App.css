@@ -29,7 +29,7 @@ header {
   background-color: #375a7f;;
   display: flex;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 1rem 12%;
 }
 
 .logo-div {
@@ -37,8 +37,8 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  margin-left: 10%;
-  width: 50%;
+  /* margin-left: 10%; */
+  width: 30%;
 }
 
 .logo-div h1 {
@@ -60,8 +60,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-width: 40%;
-  margin-right: 12%;
+  width: 60%;
+  /* margin-right: 12%; */
 }
 
 .search-div input {
@@ -78,6 +78,7 @@ header {
   height: 30px;
   width: 30px;
 }
+
 
 .toggle-btn.down {
   background-image: url("./expand-arrow.svg");
@@ -108,7 +109,6 @@ header {
   width: 130px;
 }
 
-
 ul {
   list-style: none;
   padding: 0;
@@ -118,23 +118,25 @@ ul {
   display: flex !important;
 }
 
-.card {
-  margin-bottom: 1rem;
-  width: 80%;
-}
-
 .primary {
   color: #375a7f !important;
 }
 
 .links {
   padding: 1rem;
+  margin-top: 4rem;
 }
 
 .links ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.card {
+  box-shadow: -1px -1px 1px 1px #375a7f;
+  margin-bottom: 1rem;
+  width: 80vw;
 }
 
 .card-title {
@@ -194,4 +196,37 @@ ul {
 #message {
   color: white;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo-div,
+  .search-div {
+    align-items: center;
+  }
+
+  .logo-div {
+    justify-content: center;
+    width: 70%;
+  }
+
+  .search-div {
+    width: 80vw !important;
+  }
+
+  .tag-section {
+    margin: 0 auto;
+    padding: 4rem 5%;
+  }
+
+  .tag-section label {
+    width: 80px;
+  }
+
+  .card {
+    width: 95%;
+  }
 }

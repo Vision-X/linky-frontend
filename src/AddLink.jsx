@@ -23,7 +23,7 @@ export default class AddLink extends Component {
         }, 4000);
       })
       .catch(err => console.log(err));
-    // document.querySelector("input").reset();
+    document.querySelectorAll("input").value = '';
   };
 
   getFormData = () => {
