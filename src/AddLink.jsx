@@ -9,6 +9,7 @@ export default class AddLink extends Component {
       method: "POST",
       headers: {
         Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(myData)
@@ -23,21 +24,20 @@ export default class AddLink extends Component {
       })
       .catch(err => console.log(err));
     // document.querySelector("input").reset();
-  }
-
-  getFormData() {
-  return {
-    title: this.title.value,
-    description: this.description.value,
-    myUrl: this.myUrl.value,
-    tags: this.tags.value
   };
-}
+
+  getFormData = () => {
+    return {
+      title: this.title.value,
+      description: this.description.value,
+      url: this.myUrl.value
+    };
+  };
 
   onSubmit = (e) => {
-  e.preventDefault();
-  this.postFormData();
-}
+    e.preventDefault();
+    this.postFormData();
+  };
 
   render() {
     return (
