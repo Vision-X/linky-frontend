@@ -18,13 +18,13 @@ Pt. 2
 
 - [x] Populate DB with more links
 
-- [] Filter functionality - Checkboxes!
+- [x] Filter functionality - Checkboxes!
  - [x] buttons for each tag (tag filter button box)
     - [x] onClick --- filter by that tag name
     - [x] render/return filtered elements
 
 
-Pt.3 - Morning Goals! (on filter-mod branch!!!!!)
+Pt.3 - Late night Goals (Day1)! (on filter-mod branch!!!!!)
 
 - [x] Search Filter - Dynamically typed text!
   - []x filter by search text input
@@ -37,7 +37,7 @@ Pt.3 - Morning Goals! (on filter-mod branch!!!!!)
 - [x] populate DB with all my links
 
 
-Pt. 4 final crunch
+Pt. 4 - (Day2) final crunch
 
 - [] Fix known issues
   - [] link wraps on card too far left
