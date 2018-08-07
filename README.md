@@ -39,7 +39,7 @@ Pt.3 - Late night Goals (Day1)! (on filter-mod branch!!!!!)
 
 Pt. 4 - (Day2) final crunch
 
-- [] Fix known issues
+- [] Fix known issues, including...
   - [] link wraps on card too far left
   - [] change the Show/Hide icons to png format for opacity
   - [] center show/hide icons, add text
@@ -49,4 +49,5 @@ Pt. 4 - (Day2) final crunch
   - [x] favicons are too big currently
   - [] header on mobile? who cares?
   - [] box shadow on link cards could be improved - or go lol.
-  - [] bring in lightweight .woff fonts
+  - [] google fonts up in thissss
+  - [] bring in lightweight .woff fonts || not incredibly important
