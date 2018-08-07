@@ -34,7 +34,7 @@ class App extends Component {
       finalAry.push(...link['stringarray'])
     })
     let filteredTagAry = [...new Set(finalAry)];
-    return this.setState({ tags: filteredTagAry})
+    this.setState({ tags: filteredTagAry})
   }
 
   renderWhenFetched = () => {
