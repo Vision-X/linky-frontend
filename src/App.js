@@ -43,7 +43,7 @@ class App extends Component {
         <Fragment>
           <header>
             <div className="logo-div">
-              <h1>LiNKY!</h1>
+              <h1>LiNKYe!</h1>
               <small>A better way to save links!</small>
             </div>
             <div className="search-div">
@@ -62,12 +62,12 @@ class App extends Component {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                          <label htmlFor={tag} className="btn btn-dark" onClick={this._onClick} >
-                            <input type="checkbox" />
+                      <label htmlFor={tag} className="btn btn-dark" onClick={this._onClick} >
+                        <input type="checkbox" />
                             {tag}
-                          </label>
+                      </label>
                     )}
-                  )}
+                )}
             </div>
           </section>
           <Links className="links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>

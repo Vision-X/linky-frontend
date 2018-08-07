@@ -43,10 +43,10 @@ Pt. 4 - (Day2) final crunch
   - [] link wraps on card too far left
   - [] change the Show/Hide icons to png format for opacity
   - [] center show/hide icons, add text
-  - [] bring in lightweight .woff fonts
-  - [] fix Header
+  - [x] fix Header
   - [] Logo/h1 needs work
     - [] bring in link icon in png, attach to h1
-  - [] favicons are too big currently
+  - [x] favicons are too big currently
   - [] header on mobile? who cares?
   - [] box shadow on link cards could be improved - or go lol.
+  - [] bring in lightweight .woff fonts

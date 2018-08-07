@@ -26,7 +26,8 @@
 
 header {
   align-items: center;
-  background-color: #375a7f;;
+  background-image: linear-gradient(to left bottom,
+    #333333, #3b3b45, #3f4457, #3e4f6b, #375a7f);
   display: flex;
   justify-content: flex-start;
   padding: 1rem 12%;
@@ -37,7 +38,6 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  /* margin-left: 10%; */
   width: 30%;
 }
 
@@ -61,7 +61,6 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   width: 60%;
-  /* margin-right: 12%; */
 }
 
 .search-div input {
@@ -75,10 +74,9 @@ header {
   background-size: contain;
   background-color: white;
   float: right;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
 }
-
 
 .toggle-btn.down {
   background-image: url("./expand-arrow.svg");
@@ -146,9 +144,9 @@ ul {
 }
 
 .card-title img {
-  height: 25px;
-  width: 25px;
-  margin-top: 4px;
+  height: 20px;
+  width: 20px;
+  margin-top: 2px;
   margin-right: 1rem;
   margin-left: 1rem;
 }
@@ -161,13 +159,13 @@ ul {
   color: #999;
   font-size: 1.4rem;
   font-style: italic;
-  margin-left: 3.7rem;
+  margin-left: 4.2rem;
   margin-top: 6px;
 }
 
 .card-link {
   font-size: 1.0rem;
-  margin-left: 3.7rem;
+  margin-left: 4.2rem;
   text-overflow: ellipsis;
 }
 
