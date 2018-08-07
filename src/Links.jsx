@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 export default class Links extends Component {
   render() {
-    const { data, filterStuff } = this.props;
+    const { data, filterStuff, searchText } = this.props;
     return (
       <section className="links">
         <ul>
@@ -19,6 +19,12 @@ export default class Links extends Component {
                     }
                   }
                 } return acc.sort((a,b) => b.title < a.title);
+              } else if (searchText.length) {
+                  let searchFilter = data.filter(link => {
+                    return link.title.toLowerCase().includes(searchText.toLowerCase()) ||
+                           link.description.toLowerCase().includes(searchText.toLowerCase())
+                  })
+                  return searchFilter;
               } else {
                   return data.sort((a,b) => b.title < a.title)
               }
@@ -33,15 +39,6 @@ export default class Links extends Component {
                     </div>
                     <h4 className="card-text">{item.description}</h4>
                     <a className="card-link" href={item.url} target="_blank">{item.url}</a>
-                    {/*<div className="tag-list">
-                      <ul>
-                      {item.stringarray.map(tag => {
-                        return (
-                          <li className="badge badge-primary" key={Math.random(new Date())}>{tag}</li>
-                        )
-                      })}
-                      </ul>
-                    </div>*/}
                   </div>
                 </li>
               )

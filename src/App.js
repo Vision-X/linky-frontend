@@ -6,6 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      search: "",
       tags: [],
       selected: []
     }
@@ -40,7 +41,22 @@ class App extends Component {
     if (this.state.linkData) {
       return (
         <Fragment>
-          <Header />
+          <header>
+            <div className="logo-div">
+              <h1>LiNKY!</h1>
+              <small>A better way to save links!</small>
+            </div>
+            <div className="search-div">
+              <label htmlFor="search-input"></label>
+              <input
+                type="text"
+                name="search-input"
+                placeholder="Search All Links"
+                value={this.state.search}
+                onChange={this._updateSearch.bind(this)}
+              />
+            </div>
+          </header>
           <button className="toggle-btn up" onClick={this._showHide}></button>
           <section className="tag-section show">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -54,18 +70,37 @@ class App extends Component {
                   )}
             </div>
           </section>
-          <Links className="Links" data={this.state.linkData[0]} filterStuff={this.state.selected} />
+          <Links className="Links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>
         </Fragment>
       )
     } else {
       return (
       <Fragment>
-        <Header />
+        <header>
+          <div className="logo-div">
+            <h1>LiNKY!</h1>
+            <small>A better way to save links!</small>
+          </div>
+          <div className="search-div">
+            <label htmlFor="search-input"></label>
+            <input
+              type="text"
+              name="search-input"
+              placeholder="Search All Links"
+              value={this.state.search}
+              onChange={this._updateSearch.bind(this)}
+            />
+          </div>
+        </header>
         <p>"No data Yet!"</p>
       </Fragment>
     )
 
     }
+  }
+
+  _updateSearch = (event) => {
+    this.setState({ search: event.target.value.substr(0,20)});
   }
 
   _showHide = (event) => {
@@ -102,7 +137,7 @@ class App extends Component {
   }
 }
 
-const Header = () =>
+{/*const Header = () =>
   <header>
     <div className="logo-div">
       <h1>LiNKY!</h1>
@@ -110,9 +145,15 @@ const Header = () =>
     </div>
     <div className="search-div">
       <label htmlFor="search-input"></label>
-      <input type="text" name="search-input" placeholder="Search All Links..." />
+      <input
+        type="text"
+        name="search-input"
+        placeholder="Search All Links"
+        value={this.state.search}
+        onChange={this._updateSearch.bind(this)}
+      />
     </div>
-  </header>
+  </header>*/}
 
 
 export default App;
