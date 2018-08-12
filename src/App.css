@@ -26,8 +26,8 @@
 
 header {
   align-items: center;
-  background-image: linear-gradient(to left bottom,
-    #333333, #3b3b45, #3f4457, #3e4f6b, #375a7f);
+  /* background-image: linear-gradient(to left bottom, */
+    /* #333333, #3b3b45, #3f4457, #3e4f6b, #375a7f); */
   display: flex;
   justify-content: flex-start;
   padding: 1rem 12%;
@@ -46,14 +46,14 @@ header {
   font-size: 5rem;
   font-weight: 600;
   margin-bottom: 0 !important;
-  text-shadow: 2px 2px 2px black;
+  /* text-shadow: 2px 2px 8px ; */
 }
 
 .logo-div small {
-  color: #3498DB;
+  /* color: #3498DB; */
   font-size: 1.8rem;
   font-style: italic;
-  text-shadow: 2px 2px 20px black;
+  /* text-shadow: 2px 2px 20px black; */
 }
 
 .search-div {
@@ -117,7 +117,7 @@ ul {
 }
 
 .primary {
-  color: #375a7f !important;
+  /* color: #375a7f !important; */
 }
 
 .links {
@@ -132,7 +132,7 @@ ul {
 }
 
 .card {
-  box-shadow: -1px -1px 1px 1px #375a7f;
+  /* box-shadow: -1px -1px 1px 1px #375a7f; */
   margin-bottom: 1rem;
   width: 80vw;
 }
@@ -152,11 +152,11 @@ ul {
 }
 
 .card-title h2 {
-  color: #3498DB ;
+  /* color: #3498DB; */
 }
 
 .card-text {
-  color: #999;
+  /* color: #999; */
   font-size: 1.4rem;
   font-style: italic;
   margin-left: 4.2rem;
@@ -171,7 +171,7 @@ ul {
 
 .btn-dark {
   font-size: 1.2rem;
-  text-shadow: 2px 2px 4px black;
+  /* text-shadow: 2px 2px 4px black; */
 }
 
 .link-input {
@@ -180,7 +180,7 @@ ul {
   margin: 2rem 10% 0 10%;
   width: 80%;
   height: 100vh;
-  color: white;
+  /* color: white; */
 }
 
 .link-input label {
@@ -197,7 +197,7 @@ ul {
 }
 
 #message {
-  color: white;
+  /* color: white; */
   font-size: 2rem;
 }
 

@@ -41,7 +41,7 @@ class App extends Component {
     if (this.state.linkData) {
       return (
         <Fragment>
-          <header>
+          <header className="navbar-dark bg-primary">
             <div className="logo-div">
               <h1>LiNKYe!</h1>
               <small>A better way to save links!</small>
