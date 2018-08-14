@@ -47,7 +47,7 @@ class App extends Component {
                 <div className="link-icon"></div>
                 <h1>LiNKYe!</h1>
               </div>
-              <small>A better way to save links!</small>
+              <small>Bookmarks made useful!</small>
             </div>
             <div className="search-div">
               <label htmlFor="search-input"></label>
