@@ -60,8 +60,8 @@ class App extends Component {
               />
             </div>
           </header>
-          <button className="toggle-btn up" onClick={this._showHide}></button>
-          <section className="tag-section show">
+          <button className="toggle-btn down" onClick={this._showHide}></button>
+          <section className="tag-section hide">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (

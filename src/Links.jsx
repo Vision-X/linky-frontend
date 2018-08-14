@@ -33,11 +33,11 @@ export default class Links extends Component {
               return (
                 <li className="card" key={Math.random(new Date())}>
                   <div className="card-body">
-                    <div className="card-title col-3">
+                    <div className="card-title col-4">
                       <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
                       <h2 className="card-title">{item.title}</h2>
                     </div>
-                    <h4 className="card-text col-6">{item.description}</h4>
+                    <h4 className="card-text col-5">{item.description}</h4>
                     <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
                   </div>
                 </li>
