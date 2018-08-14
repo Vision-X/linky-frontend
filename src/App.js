@@ -41,10 +41,13 @@ class App extends Component {
     if (this.state.linkData) {
       return (
         <Fragment>
-          <header>
+          <header className="navbar-dark bg-primary">
             <div className="logo-div">
-              <h1>LiNKYe!</h1>
-              <small>A better way to save links!</small>
+              <div className="logo-and-h1">
+                <div className="link-icon"></div>
+                <h1>LiNKYe!</h1>
+              </div>
+              <small>Bookmarks made useful!</small>
             </div>
             <div className="search-div">
               <label htmlFor="search-input"></label>
@@ -57,12 +60,15 @@ class App extends Component {
               />
             </div>
           </header>
-          <button className="toggle-btn up" onClick={this._showHide}></button>
-          <section className="tag-section show">
+          <button className="toggle-btn down" onClick={this._showHide}></button>
+          <section className="tag-section hide">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                      <label htmlFor={tag} className="btn btn-dark" onClick={this._onClick} >
+                      <label htmlFor={tag}
+                             className="btn btn-dark"
+                             onClick={this._onClick}
+                      >
                         <input type="checkbox" />
                             {tag}
                       </label>
@@ -70,7 +76,11 @@ class App extends Component {
                 )}
             </div>
           </section>
-          <Links className="links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>
+          <Links className="links"
+                 data={this.state.linkData[0]}
+                 filterStuff={this.state.selected}
+                 searchText={this.state.search}
+          />
         </Fragment>
       )
     } else {
@@ -102,16 +112,15 @@ class App extends Component {
   }
 
   _showHide = (event) => {
-    event.target.classList.contains("up") ? event.target.setAttribute('class', 'toggle-btn down')
-                                          : event.target.setAttribute('class', 'toggle-btn up')
-    let show = event.target.nextSibling;
-    console.log(show.classList);
+    let targ = event.target;
+    targ.classList.contains("up") ? targ.setAttribute('class', 'toggle-btn down')
+                                          : targ.setAttribute('class', 'toggle-btn up')
+    let show = targ.nextSibling;
     show.classList.contains("show") ? show.setAttribute('class', 'tag-section hide')
                                     : show.setAttribute('class', 'tag-section show')
   }
 
   _onClick = (event) => {
-    // console.log("thissss", this);
     let value =  event.target.htmlFor;
     let selected = [...this.state.selected];
     let index = selected.indexOf(value);

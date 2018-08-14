@@ -16,8 +16,8 @@ export default class AddLink extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        let message = document.querySelector("#message");
-        message.textContent = "Your event was submitted!";
+        let message = document.querySelector(".message");
+        message.textContent = "Sucess! Your link was submitted!";
         setTimeout(() => {
           message.textContent = "";
         }, 4000);
@@ -40,8 +40,8 @@ export default class AddLink extends Component {
     };
   };
 
-  onSubmit = (e) => {
-    e.preventDefault();
+  onSubmit = (event) => {
+    event.preventDefault();
     this.postFormData();
     document.querySelector(".link-input").reset();
   };
@@ -51,7 +51,7 @@ export default class AddLink extends Component {
       <form
         className="link-input"
         onClick={this._onClick}
-        onSubmit={e => this.onSubmit(e)}
+        onSubmit={event => this.onSubmit(event)}
       >
         <h2>Add a link</h2>
         <label>Title:</label>
@@ -103,7 +103,7 @@ export default class AddLink extends Component {
           />
         </div>
       <input id="add-link" className="btn btn-primary" type="submit" value="add link" />
-      <p id="message"></p>
+      <p className="message"></p>
     </form>
     )
   }
