@@ -2,12 +2,21 @@
   font-size: 0.6rem;
 }
 
+body {
+  width: 100vw;
+}
+
 header {
   align-items: center;
   box-shadow: 2px 2px 4px gray;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center !important;
   padding: 1rem 0;
+}
+
+header>div {
+  /* margin: 1rem 0; */
 }
 
 .link-icon {
@@ -15,8 +24,8 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   margin-right: 1rem;
 }
 
@@ -27,7 +36,8 @@ header {
 .logo-div {
   align-items: center;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: center;
   font-size: 2rem;
   width: 30%;
   margin-right: 2rem;
@@ -54,16 +64,20 @@ header {
 
 .search-div {
   display: flex;
+  align-self: stretch;
   /* flex-direction: column; */
-  justify-content: flex-start;
+  justify-content: center;
   width: 60%;
+  margin: 0 20%;
 }
 
 .search-div input {
+  border: none !important;
   font-size: 2rem;
   padding-left: 1rem;
   height: 3rem;
   width: 100%;
+  /* width: 80%; */
 }
 
 .search-icon {
@@ -72,7 +86,8 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 2rem;
-  width: 4rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 /* .add-icon {
@@ -159,7 +174,7 @@ ul {
   border: none;
   min-height: 6rem;
   position: relative;
-  width: 100vw;
+  width: 100%;
   z-index: 1;
 }
 
@@ -270,6 +285,8 @@ ul {
 
   header {
     flex-direction: column;
+    /* justify-content: flex-start !important; */
+    align-items: center;
   }
 
   .logo-div,
@@ -277,22 +294,37 @@ ul {
     align-items: center;
   }
 
+  .search-div {
+    align-self: stretch;
+    /* margin-left: 2%; */
+  }
+
+  .search-div input {
+    width: 80%;
+  }
+
   .logo-div {
     justify-content: center;
-    width: 100%;
+    /* width: 100%; */
+    margin-right: 5%;
   }
 
   .logo-div small {
-    margin-left: 36px;
+    /* margin-left: 36px; */
   }
 
   .search-div {
-    width: 80vw !important;
+    /* width: 80vw !important; */
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 1rem 5%;
   }
 
   .tag-section {
     margin: 0 auto;
-    padding: 4rem 5%;
+    padding: 2rem 0;
+    background-color: lightgray;
   }
 
   .tag-section label {
