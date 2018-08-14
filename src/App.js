@@ -65,7 +65,10 @@ class App extends Component {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                      <label htmlFor={tag} className="btn btn-dark" onClick={this._onClick} >
+                      <label htmlFor={tag}
+                             className="btn btn-dark"
+                             onClick={this._onClick}
+                      >
                         <input type="checkbox" />
                             {tag}
                       </label>
@@ -73,7 +76,11 @@ class App extends Component {
                 )}
             </div>
           </section>
-          <Links className="links" data={this.state.linkData[0]} filterStuff={this.state.selected} searchText={this.state.search}/>
+          <Links className="links"
+                 data={this.state.linkData[0]}
+                 filterStuff={this.state.selected}
+                 searchText={this.state.search}
+          />
         </Fragment>
       )
     } else {
@@ -105,9 +112,10 @@ class App extends Component {
   }
 
   _showHide = (event) => {
-    event.target.classList.contains("up") ? event.target.setAttribute('class', 'toggle-btn down')
-                                          : event.target.setAttribute('class', 'toggle-btn up')
-    let show = event.target.nextSibling;
+    let targ = event.target;
+    targ.classList.contains("up") ? targ.setAttribute('class', 'toggle-btn down')
+                                          : targ.setAttribute('class', 'toggle-btn up')
+    let show = targ.nextSibling;
     show.classList.contains("show") ? show.setAttribute('class', 'tag-section hide')
                                     : show.setAttribute('class', 'tag-section show')
   }

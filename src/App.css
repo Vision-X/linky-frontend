@@ -102,9 +102,14 @@ header {
   background-position: center;
   background-size: contain;
   background-color: white;
+  cursor: pointer;
   margin: 1% 48%;
   height: 20px;
   width: 20px;
+}
+
+.toggle-btn:focus {
+  outline: 0 !important;
 }
 
 .toggle-btn.down {
