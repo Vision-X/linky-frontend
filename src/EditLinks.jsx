@@ -48,7 +48,6 @@ export default class EditLinks extends Component {
 
   getFormData = (index) => {
     let thisForm = this.form[index];
-    let formInputs = thisForm.querySelector("input");
     let stringAry = [];
     if (thisForm.querySelector('#tags1').value) { stringAry.push(thisForm.querySelector('#tags1').value); }
     if (thisForm.querySelector('#tags2').value) { stringAry.push(thisForm.querySelector('#tags2').value); }
@@ -62,10 +61,6 @@ export default class EditLinks extends Component {
       stringarray: '{' + stringAry + '}'
     };
   };
-
-  _onClick = (index) => {
-    console.log(this.form[index]);
-  }
 
   onSubmit = (index, event) => {
     event.preventDefault();
@@ -83,13 +78,11 @@ export default class EditLinks extends Component {
         <section>
           <h1>Edit data in the DB...</h1>
           {data.sort((a,b) => {return a.id - b.id}).map((item, index) => {
-            let boundClick = this._onClick.bind(this, index);
             let boundSubmit = this.onSubmit.bind(this, index);
             return (
               <form
                 className="link-input edit-link-form"
                 ref={ref => this.form[index] = ref}
-                onClick={boundClick}
                 onSubmit={boundSubmit}
               >
                 <h2>Edit link {item.id}</h2>
