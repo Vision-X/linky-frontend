@@ -105,13 +105,11 @@ class App extends Component {
     event.target.classList.contains("up") ? event.target.setAttribute('class', 'toggle-btn down')
                                           : event.target.setAttribute('class', 'toggle-btn up')
     let show = event.target.nextSibling;
-    console.log(show.classList);
     show.classList.contains("show") ? show.setAttribute('class', 'tag-section hide')
                                     : show.setAttribute('class', 'tag-section show')
   }
 
   _onClick = (event) => {
-    // console.log("thissss", this);
     let value =  event.target.htmlFor;
     let selected = [...this.state.selected];
     let index = selected.indexOf(value);
