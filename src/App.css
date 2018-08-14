@@ -7,7 +7,7 @@ header {
   box-shadow: 2px 2px 4px gray;
   display: flex;
   justify-content: flex-start;
-  padding: 1rem 5%;
+  padding: 1rem 0;
 }
 
 .link-icon {
@@ -35,7 +35,7 @@ header {
 
 .logo-div h1 {
   color: white;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   margin-bottom: 0 !important;
 }
@@ -54,15 +54,35 @@ header {
 
 .search-div {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: flex-start;
   width: 60%;
 }
 
 .search-div input {
-  font-size: 2.4rem;
-  height: 4rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+  height: 3rem;
+  width: 100%;
 }
+
+.search-icon {
+  background-image: url('./searching-magnifying-glass.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 2rem;
+  width: 4rem;
+}
+
+/* .add-icon {
+  background-image: url('./add-plus-button.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 6rem;
+  width: 4rem;
+} */
 
 .toggle-btn {
   background-color: white;
@@ -93,7 +113,8 @@ header {
 }
 
 .tag-section {
-  padding: 0 10% 2rem 10%;
+  /* padding: 0 5% 2rem 5%; */
+  padding-bottom: 2rem;
 }
 
 .tag-section div {
@@ -104,6 +125,7 @@ header {
 }
 
 .tag-section label {
+  font-size: 1.6rem;
   margin-right: 0.6rem;
   margin-top: 0.6rem;
   width: 15%;
@@ -124,7 +146,7 @@ ul {
 }
 
 .links {
-  padding: 0 2rem;
+  padding: 0 4rem;
 }
 
 .links ul {
@@ -135,9 +157,28 @@ ul {
 
 .card {
   border: none;
-  min-height: 7rem;
-  outline: 1px solid steelblue;
+  min-height: 6rem;
+  position: relative;
   width: 100vw;
+  z-index: 1;
+}
+
+.card:before {
+  content: "";
+  border-bottom: 1px solid gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 95%;
+  margin: 0 2%;
+}
+
+.card:hover {
+  /* background-color: steelblue; */
+  /* color: white; */
+  /* outline: 1px solid steelblue; */
+  /* text-decoration: underline; */
 }
 
 .card-body {
@@ -154,10 +195,10 @@ ul {
 }
 
 .card-title img {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   margin-right: 1rem;
-  margin-top: 1px;
+  /* margin-top: 1px; */
 }
 
 .card-title h2 {
@@ -172,6 +213,7 @@ ul {
 
 .card-link {
   overflow: hidden;
+  /* color: black; */
 }
 
 .btn-dark {
@@ -222,6 +264,10 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
+  :root {
+    font-size: 0.5rem;
+  }
+
   header {
     flex-direction: column;
   }
@@ -251,6 +297,10 @@ ul {
 
   .tag-section label {
     width: 80px;
+  }
+
+  .links {
+    padding: 0 1%;
   }
 
   .card {

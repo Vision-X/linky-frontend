@@ -58,6 +58,8 @@ class App extends Component {
                 value={this.state.search}
                 onChange={this._updateSearch.bind(this)}
               />
+              <div className="search-icon"></div>
+              <div className="add-icon"></div>
             </div>
           </header>
           <button className="toggle-btn down" onClick={this._showHide}></button>
@@ -88,8 +90,10 @@ class App extends Component {
         <Fragment>
           <header>
             <div className="logo-div">
-              <h1>LiNKY!</h1>
-              <small>A better way to save links!</small>
+              <div className="logo-and-h1">
+                <div className="link-icon"></div>
+                <h1>LiNKYe!</h1>
+              </div>
             </div>
             <div className="search-div">
               <label htmlFor="search-input"></label>
@@ -100,6 +104,8 @@ class App extends Component {
                 value={this.state.search}
                 onChange={this._updateSearch.bind(this)}
               />
+            <div className="search-icon"></div>
+            <div className="add-icon"></div>
             </div>
           </header>
           <p>"No data Yet!"</p>

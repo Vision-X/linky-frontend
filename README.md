@@ -6,7 +6,7 @@
  - [x] Wipe crap out we dont need
  - [x] Header component
  - [x] search field box
- - [] tag filter button box
+ - [x] tag filter button box
  - [x] Build showAll component (in App.js for now)
 
 ### Pt. 2
@@ -36,15 +36,15 @@
 
 ### Pt. 4 - (Day2) final crunch
 
-- [] Fix known issues, including...
-  - [] link wraps on card too far left
-  - [] change the Show/Hide icons to png format for opacity
-  - [] center show/hide icons, add text
+- [x] Fix known issues, including...
+  - [x] link wraps on card too far left
+  - [x] change the Show/Hide icons to png format for opacity
+  - [x] center show/hide icons, add text
   - [x] fix Header
-  - [] Logo/h1 needs work
-    - [] bring in link icon in png, attach to h1
+  - [x] Logo/h1 needs work
+    - [x] bring in link icon in png, attach to h1
   - [x] favicons are too big currently
-  - [] header on mobile? who cares?
-  - [] box shadow on link cards could be improved - or go lol.
+  - [x] header on mobile? who cares?
+  - [x] box shadow on link cards could be improved - or go lol.
   - [] google fonts up in thissss
   - [] bring in lightweight .woff fonts || not incredibly important
