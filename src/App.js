@@ -43,7 +43,10 @@ class App extends Component {
         <Fragment>
           <header className="navbar-dark bg-primary">
             <div className="logo-div">
-              <h1>LiNKYe!</h1>
+              <div className="logo-and-h1">
+                <div className="link-icon"></div>
+                <h1>LiNKYe!</h1>
+              </div>
               <small>A better way to save links!</small>
             </div>
             <div className="search-div">
