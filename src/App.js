@@ -47,7 +47,6 @@ class App extends Component {
                 <div className="link-icon"></div>
                 <h1>LiNKYe!</h1>
               </div>
-              {/*<small>Bookmarks made useful!</small>*/}
             </div>
             <div className="search-div">
               <label htmlFor="search-input"></label>
@@ -67,7 +66,8 @@ class App extends Component {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                      <label htmlFor={tag}
+                      <label key={Math.random(new Date())}
+                             htmlFor={tag}
                              className="btn btn-dark"
                              onClick={this._onClick}
                       >
@@ -78,7 +78,7 @@ class App extends Component {
                 )}
             </div>
           </section>
-          <Links className="links"
+          <Links className=""
                  data={this.state.linkData[0]}
                  filterStuff={this.state.selected}
                  searchText={this.state.search}
@@ -103,12 +103,12 @@ class App extends Component {
                 placeholder="Search All Links"
                 value={this.state.search}
                 onChange={this._updateSearch.bind(this)}
+                onKeyUp={this.renderCounter}
               />
             <div className="search-icon"></div>
-            <div className="add-icon"></div>
             </div>
           </header>
-          <p>"No data Yet!"</p>
+          <p>No data yet!</p>
         </Fragment>
     )}
   }

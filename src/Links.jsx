@@ -6,7 +6,7 @@ export default class Links extends Component {
     return (
       <section className="links">
         <ul>
-            {data.reduce(function(acc, val) {
+            {data.reduce((acc, val) => {
               let count = 0;
               if (filterStuff.length) {
                 for (let i = 0; i < val.stringarray.length; i++) {
@@ -29,7 +29,7 @@ export default class Links extends Component {
                   return data.sort((a,b) => b.title < a.title)
               }
             },
-            []).map(item => {
+            []).map((item, idx, arr) => {
               return (
                 <li className="card" key={Math.random(new Date())}>
                   <div className="card-body">
