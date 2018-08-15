@@ -25,9 +25,6 @@ header {
   margin-right: 1rem;
 }
 
-.bg-primary {
-  background-color: steelblue !important;
-}
 
 .logo-div {
   align-items: center;
@@ -120,6 +117,7 @@ input:focus {
   width: 20px;
 }
 
+
 .toggle-btn:focus {
   outline: 0 !important;
 }
@@ -139,6 +137,10 @@ input:focus {
 .tag-section {
   background-color: lightgray;
   padding-bottom: 2rem;
+}
+
+.bg-primary {
+  background-color: steelblue !important;
 }
 
 .tag-section div {
@@ -173,11 +175,11 @@ ul {
   padding: 0 4rem;
 }
 
-.links ul {
+/* .links ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
 .card {
   border: none;
@@ -196,6 +198,13 @@ ul {
   height: 1px;
   width: 95%;
   margin: 0 2%;
+}
+
+.card:hover {
+  /* background-color: steelblue; */
+  /* color: white; */
+  /* outline: 1px solid steelblue; */
+  /* text-decoration: underline; */
 }
 
 .card-body {

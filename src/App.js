@@ -66,8 +66,7 @@ class App extends Component {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                      <label key={Math.random(new Date())}
-                             htmlFor={tag}
+                      <label htmlFor={tag}
                              className="btn btn-dark"
                              onClick={this._onClick}
                       >
@@ -78,7 +77,7 @@ class App extends Component {
                 )}
             </div>
           </section>
-          <Links className=""
+          <Links className="links"
                  data={this.state.linkData[0]}
                  filterStuff={this.state.selected}
                  searchText={this.state.search}
