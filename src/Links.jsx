@@ -1,51 +1,86 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class Links extends Component {
-  render() {
-    const { data, filterStuff, searchText } = this.props;
-    return (
-      <section className="links">
-        <ul>
-            {data.reduce((acc, val) => {
-              let count = 0;
-              if (filterStuff.length) {
-                for (let i = 0; i < val.stringarray.length; i++) {
-                  for (let j = 0; j < filterStuff.length; j++) {
-                    if (val.stringarray[i] === filterStuff[j]) {
-                      count++;
-                      if (count === filterStuff.length) {
-                        acc.push(val);
-                      }
-                    }
-                  }
-                } return acc.sort((a,b) => b.title < a.title);
-              } else if (searchText.length) {
-                  let searchFilter = data.filter(link => {
-                    return link.title.toLowerCase().includes(searchText.toLowerCase()) ||
-                           link.description.toLowerCase().includes(searchText.toLowerCase())
-                  })
-                  return searchFilter;
-              } else {
-                  return data.sort((a,b) => b.title < a.title)
-              }
-            },
-            []).map((item, idx, arr) => {
-              return (
+
+
+  renderWhen = () => {
+    if (this.props.filtered && this.props.filtered.length > 0) {
+        return (
+            <section className="links">
+              <p>1 - {this.props.arrLength}</p>
+              <ul>
+                {this.props.filtered.map(item => {
+                  return (
+                    <li className="card" key={Math.random(new Date())}>
+                      <div className="card-body">
+                        <div className="card-title col-4">
+                          <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
+                          <h2 className="card-title">{item.title}</h2>
+                        </div>
+                        <h4 className="card-text col-5">{item.description}</h4>
+                        <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
+                      </div>
+                    </li>
+                )}
+              )}
+              </ul>
+            </section>
+        )
+    } else if (this.props.filtered.length === 0 && this.props.search.length > 0) {
+      return (
+        <section className="links">
+          <p>0 - {this.props.arrLength}</p>
+          <ul>
                 <li className="card" key={Math.random(new Date())}>
                   <div className="card-body">
-                    <div className="card-title col-4">
-                      <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
-                      <h2 className="card-title">{item.title}</h2>
+                    <div className="card-title col-5">
+                      <h2 className="card-title">0 matches found</h2>
                     </div>
-                    <h4 className="card-text col-5">{item.description}</h4>
-                    <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
+                    <h4 className="card-text col-5">0 matches found</h4>
                   </div>
                 </li>
-              )
-            })
-          }
-        </ul>
-      </section>
+          </ul>
+        </section>
+
+      )
+    } else if (this.props.data) {
+      return (
+          <section className="links">
+            <p>1 - {this.props.arrLength}</p>
+            <ul>
+              {this.props.data.map(item => {
+                return (
+                  <li className="card" key={Math.random(new Date())}>
+                    <div className="card-body">
+                      <div className="card-title col-4">
+                        <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
+                        <h2 className="card-title">{item.title}</h2>
+                      </div>
+                      <h4 className="card-text col-5">{item.description}</h4>
+                      <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
+                    </div>
+                  </li>
+              )}
+            )}
+            </ul>
+          </section>
+      )
+    } else {
+      return (
+        <p>The developer who made this, and shall remain nameless, is not as
+           good at react as he/she/they claim to be
+        </p>
+      )
+    }
+  }
+
+  render() {
+    // const { data, filterStuff, searchText, filteredArr } = this.props;
+    // const { data, filteredArr, arrLength } = this.props;
+    return (
+      <Fragment>
+        {this.renderWhen()}
+      </Fragment>
     )
   }
 }
