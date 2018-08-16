@@ -13,9 +13,15 @@ export default class Links extends Component {
             <section className="links">
               <p className="results">1 - {arrLength}</p>
               <ul>
-                {filtArr.sort().map(item => {
+                {filtArr.sort((a,b) => {
+                  a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                         .toLowerCase();
+                  b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                         .toLowerCase();
+                  return a.title > b.title
+                }).map(item => {
                   return (
-                    <li className="card">
+                    <li className="card" key={item.id}>
                       <div className="card-body">
                         <div className="card-title col-4">
                           <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
@@ -49,14 +55,19 @@ export default class Links extends Component {
 
       )
     } else if (data) {
-      let sorted = data.sort((a,b) => b.title < a.title);
       return (
           <section className="links">
             <p className="results">1 - {arrLength}</p>
             <ul>
-              {sorted.map(item => {
+              {data.sort((a,b) => {
+                a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                       .toLowerCase();
+                b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                       .toLowerCase();
+                return a.title > b.title
+                  }).map(item => {
                 return (
-                  <li className="card">
+                  <li className="card" key={item.id}>
                     <div className="card-body">
                       <div className="card-title col-4">
                         <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
