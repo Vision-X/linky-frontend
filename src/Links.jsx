@@ -13,12 +13,14 @@ export default class Links extends Component {
             <section className="links">
               <p className="results">1 - {arrLength}</p>
               <ul>
-                {filtArr.sort((a,b) => {
+                {filtArr.slice().sort((a,b) => {
                   a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
                          .toLowerCase();
                   b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
                          .toLowerCase();
-                  return a.title > b.title
+                  return a.title > b.title ? 1 :
+                         a.title < b.title ? -1 :
+                         0
                 }).map(item => {
                   return (
                     <li className="card" key={item.id}>
@@ -59,12 +61,14 @@ export default class Links extends Component {
           <section className="links">
             <p className="results">1 - {arrLength}</p>
             <ul>
-              {data.sort((a,b) => {
+              {data.slice().sort((a,b) => {
                 a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
                        .toLowerCase();
                 b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
                        .toLowerCase();
-                return a.title > b.title
+                return a.title > b.title ? 1 :
+                       a.title < b.title ? -1 :
+                       0
                   }).map(item => {
                 return (
                   <li className="card" key={item.id}>
