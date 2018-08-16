@@ -5,13 +5,13 @@ export default class Links extends Component {
 
 
   renderWhen = () => {
-
-    if ((this.props.filtered && this.props.filtered.length > 0) ||
-         (this.props.selected && this.props.selected.length > 0)) {
-        let filtArr = this.props.filtered || this.props.selected;
+    const { data, filtered, arrLength, search, selected } = this.props;
+    if ((filtered && filtered.length) ||
+         (selected && filtered.length)) {
+        let filtArr = filtered || selected;
         return (
             <section className="links">
-              <p className="results">1 - {this.props.arrLength}</p>
+              <p className="results">1 - {arrLength}</p>
               <ul>
                 {filtArr.sort().map(item => {
                   return (
@@ -30,11 +30,11 @@ export default class Links extends Component {
               </ul>
             </section>
         )
-    } else if ((this.props.filtered.length === 0 && this.props.search.length > 0) ||
-               (!this.props.selected)) {
+    } else if ((filtered.length === 0 && search.length > 0) ||
+               (selected.length > 0 && !filtered.length)) {
       return (
         <section className="links">
-          <p className="results">0 - {this.props.arrLength}</p>
+          <p className="results">0 - {arrLength}</p>
           <ul>
                 <li className="card">
                   <div className="card-body">
@@ -48,11 +48,11 @@ export default class Links extends Component {
         </section>
 
       )
-    } else if (this.props.data) {
-      let sorted = this.props.data.sort((a,b) => b.title < a.title);
+    } else if (data) {
+      let sorted = data.sort((a,b) => b.title < a.title);
       return (
           <section className="links">
-            <p className="results">1 - {this.props.arrLength}</p>
+            <p className="results">1 - {arrLength}</p>
             <ul>
               {sorted.map(item => {
                 return (

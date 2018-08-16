@@ -61,11 +61,9 @@ class App extends Component {
           return acc;
         }
       },[])
-    } else if (!arrToCompare.length) {
+    } else {
         this.setState({ filteredArr: this.state.linkData[0] },
         this.setState({ arrLength: this.state.linkData[0].length }));
-    } else {
-      console.log("work on yer logik");
     }
   }
 
