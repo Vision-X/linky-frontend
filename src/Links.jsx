@@ -15,7 +15,7 @@ export default class Links extends Component {
               <ul>
                 {filtArr.sort().map(item => {
                   return (
-                    <li className="card" key={Math.random(new Date())}>
+                    <li className="card" key={new Date().toString()}>
                       <div className="card-body">
                         <div className="card-title col-4">
                           <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />

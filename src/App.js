@@ -118,7 +118,7 @@ class App extends Component {
                       <label htmlFor={tag}
                              className="btn btn-dark"
                              onClick={this._onClick}
-                             key={Math.random(new Date())}
+                             key={new Date().toString()}
                       >
                       <input type="checkbox"
                              onChange={this._updateSelected}
