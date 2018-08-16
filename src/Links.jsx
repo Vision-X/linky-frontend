@@ -14,12 +14,14 @@ export default class Links extends Component {
               <p className="results">1 - {arrLength}</p>
               <ul>
                 {filtArr.slice().sort((a,b) => {
-                  a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
-                         .toLowerCase();
-                  b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
-                         .toLowerCase();
-                  return a.title > b.title ? 1 :
-                         a.title < b.title ? -1 :
+                  let titleA = a.title.toLowerCase()
+                                      .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                                      .substr(0,7);
+                  let titleB = b.title.toLowerCase()
+                                      .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                                      .substr(0,7);
+                  return titleA > titleB ? 1 :
+                         titleA < titleB ? -1 :
                          0
                 }).map(item => {
                   return (
@@ -62,12 +64,14 @@ export default class Links extends Component {
             <p className="results">1 - {arrLength}</p>
             <ul>
               {data.slice().sort((a,b) => {
-                a.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
-                       .toLowerCase();
-                b.title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
-                       .toLowerCase();
-                return a.title > b.title ? 1 :
-                       a.title < b.title ? -1 :
+                let titleA = a.title.toLowerCase()
+                                    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                                    .substr(0,7);
+                let titleB = b.title.toLowerCase()
+                                    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>/]/gi, '')
+                                    .substr(0,7);
+                return titleA > titleB ? 1 :
+                       titleA < titleB ? -1 :
                        0
                   }).map(item => {
                 return (
@@ -96,8 +100,6 @@ export default class Links extends Component {
   }
 
   render() {
-    // const { data, filterStuff, searchText, filteredArr } = this.props;
-    // const { data, filteredArr, arrLength } = this.props;
     return (
       <Fragment>
         {this.renderWhen()}
