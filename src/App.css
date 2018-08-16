@@ -181,6 +181,15 @@ ul {
   justify-content: center;
 } */
 
+.results {
+  margin: 1rem 0 1rem 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 5px;
+  border: 1px solid lightgray;
+  max-width: 60px;
+}
+
 .card {
   border: none;
   min-height: 6rem;
@@ -259,12 +268,18 @@ ul {
 }
 
 .link-input input[type=text] {
-  border: 1px solid steelblue;
+  border: none;
+  border-bottom: 1px solid steelblue !important;
+  /* outline: none !important; */
   font-size: 1.2rem;
   height: 1.6rem;
   margin-right: 6px;
   margin-top: 1rem;
   padding: 10px;
+}
+
+.link-input input[type=text]:focus {
+  border-bottom: 2px solid blue !important;
 }
 
 .link-input input[type=submit] {
@@ -281,8 +296,9 @@ ul {
 }
 
 .edit-link-form {
-  outline: 2px solid steelblue;
-  padding: 2rem;
+  /* outline: 2px solid steelblue; */
+  border-bottom: 2px solid black;
+  /* padding: 2rem; */
 }
 
 .message {
