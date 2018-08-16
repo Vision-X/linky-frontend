@@ -3,13 +3,17 @@ import React, { Component, Fragment } from 'react';
 export default class Links extends Component {
 
 
+
   renderWhen = () => {
-    if (this.props.filtered && this.props.filtered.length > 0) {
+
+    if ((this.props.filtered && this.props.filtered.length > 0) ||
+         (this.props.selected && this.props.selected.length > 0)) {
+        let filtArr = this.props.filtered || this.props.selected;
         return (
             <section className="links">
               <p>1 - {this.props.arrLength}</p>
               <ul>
-                {this.props.filtered.map(item => {
+                {filtArr.sort().map(item => {
                   return (
                     <li className="card" key={Math.random(new Date())}>
                       <div className="card-body">
@@ -26,7 +30,8 @@ export default class Links extends Component {
               </ul>
             </section>
         )
-    } else if (this.props.filtered.length === 0 && this.props.search.length > 0) {
+    } else if ((this.props.filtered.length === 0 && this.props.search.length > 0) ||
+               (!this.props.selected)) {
       return (
         <section className="links">
           <p>0 - {this.props.arrLength}</p>
@@ -44,11 +49,12 @@ export default class Links extends Component {
 
       )
     } else if (this.props.data) {
+      let sorted = this.props.data.sort((a,b) => b.title < a.title);
       return (
           <section className="links">
             <p>1 - {this.props.arrLength}</p>
             <ul>
-              {this.props.data.map(item => {
+              {sorted.map(item => {
                 return (
                   <li className="card" key={Math.random(new Date())}>
                     <div className="card-body">
@@ -67,8 +73,8 @@ export default class Links extends Component {
       )
     } else {
       return (
-        <p>The developer who made this, and shall remain nameless, is not as
-           good at react as he/she/they claim to be
+        <p>The developer who made this, who shall remain nameless, is not as
+           good at react as he/she/they claim to be. =P
         </p>
       )
     }
