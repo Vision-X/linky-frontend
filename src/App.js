@@ -118,7 +118,6 @@ class App extends Component {
                       <label htmlFor={tag}
                              className="btn btn-dark"
                              onClick={this._onClick}
-                             key={new Date().toString()}
                       >
                       <input type="checkbox"
                              onChange={this._updateSelected}
@@ -135,7 +134,6 @@ class App extends Component {
                  arrLength={this.state.arrLength}
                  search={this.state.search}
                  selected={this.state.selected}
-
           />
         </Fragment>
       )

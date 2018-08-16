@@ -11,11 +11,11 @@ export default class Links extends Component {
         let filtArr = this.props.filtered || this.props.selected;
         return (
             <section className="links">
-              <p>1 - {this.props.arrLength}</p>
+              <p className="results">1 - {this.props.arrLength}</p>
               <ul>
                 {filtArr.sort().map(item => {
                   return (
-                    <li className="card" key={new Date().toString()}>
+                    <li className="card">
                       <div className="card-body">
                         <div className="card-title col-4">
                           <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
@@ -34,9 +34,9 @@ export default class Links extends Component {
                (!this.props.selected)) {
       return (
         <section className="links">
-          <p>0 - {this.props.arrLength}</p>
+          <p className="results">0 - {this.props.arrLength}</p>
           <ul>
-                <li className="card" key={Math.random(new Date())}>
+                <li className="card">
                   <div className="card-body">
                     <div className="card-title col-5">
                       <h2 className="card-title">0 matches found</h2>
@@ -52,11 +52,11 @@ export default class Links extends Component {
       let sorted = this.props.data.sort((a,b) => b.title < a.title);
       return (
           <section className="links">
-            <p>1 - {this.props.arrLength}</p>
+            <p className="results">1 - {this.props.arrLength}</p>
             <ul>
               {sorted.map(item => {
                 return (
-                  <li className="card" key={Math.random(new Date())}>
+                  <li className="card">
                     <div className="card-body">
                       <div className="card-title col-4">
                         <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
