@@ -38,7 +38,7 @@ export default class Links extends Component {
               </ul>
             </section>
         )
-    } else if ((filtered.length === 0 && search.length > 0) ||
+    } else if ((!filtered.length && search.length > 0) ||
                (selected.length > 0 && !filtered.length)) {
       return (
         <section className="links">
