@@ -2,9 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 export default class Links extends Component {
 
-
-
-  renderWhen = () => {
+    renderWhen = () => {
     const { data, filtered, arrLength, search, selected } = this.props;
     if ((filtered && filtered.length) ||
          (selected && filtered.length)) {
@@ -93,7 +91,8 @@ export default class Links extends Component {
     } else {
       return (
         <p>The developer who made this, who shall remain nameless, is not as
-           good at react as he/she/they claim to be. =P
+           good at react as he/she/they claim to be. Also, their logic clearly sucks
+           bc the code should never get here ... =P
         </p>
       )
     }
