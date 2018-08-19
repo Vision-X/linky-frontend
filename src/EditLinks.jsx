@@ -49,10 +49,18 @@ export default class EditLinks extends Component {
   getFormData = (index) => {
     let thisForm = this.form[index];
     let stringAry = [];
-    if (thisForm.querySelector('#tags1').value) { stringAry.push(thisForm.querySelector('#tags1').value); }
-    if (thisForm.querySelector('#tags2').value) { stringAry.push(thisForm.querySelector('#tags2').value); }
-    if (thisForm.querySelector('#tags3').value) { stringAry.push(thisForm.querySelector('#tags3').value); }
-    if (thisForm.querySelector('#tags4').value) { stringAry.push(thisForm.querySelector('#tags4').value); }
+    if (thisForm.querySelector('#tags1').value) {
+      stringAry.push(thisForm.querySelector('#tags1').value);
+    }
+    if (thisForm.querySelector('#tags2').value) {
+      stringAry.push(thisForm.querySelector('#tags2').value);
+    }
+    if (thisForm.querySelector('#tags3').value) {
+      stringAry.push(thisForm.querySelector('#tags3').value);
+    }
+    if (thisForm.querySelector('#tags4').value) {
+      stringAry.push(thisForm.querySelector('#tags4').value);
+    }
     return {
       id: thisForm.querySelector('#id').value,
       title: thisForm.querySelector('#title').value,
@@ -150,7 +158,12 @@ export default class EditLinks extends Component {
                     name="tags"
                   />
                 </div>
-              <input id="add-link" className="btn btn-primary" type="submit" value="update link" />
+              <input
+                id="add-link"
+                className="btn btn-primary"
+                type="submit"
+                value="update link"
+              />
               <p className="message"></p>
             </form>
           )}

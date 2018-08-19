@@ -113,12 +113,14 @@ class App extends Component {
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 {this.state.tags.sort().map(tag => {
                     return (
-                      <label htmlFor={tag}
-                             className="btn btn-dark"
-                             onClick={this._onClick}
+                      <label
+                        htmlFor={tag}
+                        className="btn btn-dark"
+                        onClick={this._onClick}
                       >
-                      <input type="checkbox"
-                             onChange={this._updateSelected}
+                      <input
+                        type="checkbox"
+                        onChange={this._updateSelected}
                       />
                             {tag}
                       </label>
@@ -126,12 +128,13 @@ class App extends Component {
                 )}
             </div>
           </section>
-          <Links className="links"
-                 data={this.state.linkData[0]}
-                 filtered={this.state.filteredArr}
-                 arrLength={this.state.arrLength}
-                 search={this.state.search}
-                 selected={this.state.selected}
+          <Links
+            className="links"
+            data={this.state.linkData[0]}
+            filtered={this.state.filteredArr}
+            arrLength={this.state.arrLength}
+            search={this.state.search}
+            selected={this.state.selected}
           />
         </Fragment>
       )
