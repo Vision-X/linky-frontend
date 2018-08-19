@@ -41,16 +41,16 @@ class App extends Component {
   }
 
   filterByTags = () => {
-    let arrToCompare = this.state.selected;
-    if (arrToCompare.length) {
+    let selectedTags = this.state.selected;
+    if (selectedTags.length) {
       this.state.linkData[0].reduce((acc, currVal) => {
         let count = 0;
-        if (arrToCompare.length > 0) {
+        if (selectedTags.length > 0) {
           for (let i = 0; i < currVal.stringarray.length; i++) {
-            for (let j = 0; j < arrToCompare.length; j++) {
-              if (currVal.stringarray[i] === arrToCompare[j]) {
+            for (let j = 0; j < selectedTags.length; j++) {
+              if (currVal.stringarray[i] === selectedTags[j]) {
                 count++;
-                if (count === arrToCompare.length) {
+                if (count === selectedTags.length) {
                   acc.push(currVal);
                 }
               }
@@ -68,11 +68,11 @@ class App extends Component {
   }
 
   filterBySearchText = () => {
-    let seek = this.state.search;
-    if (seek.length) {
+    let searchText = this.state.search;
+    if (searchText.length) {
         let searchFilter = this.state.linkData[0].filter(link => {
-          return link.title.toLowerCase().includes(seek.toLowerCase()) ||
-                 link.description.toLowerCase().includes(seek.toLowerCase())
+          return link.title.toLowerCase().includes(searchText.toLowerCase()) ||
+                 link.description.toLowerCase().includes(searchText.toLowerCase())
         });
         this.setState({ filteredArr: searchFilter },
         this.setState({ arrLength: searchFilter.length }));
