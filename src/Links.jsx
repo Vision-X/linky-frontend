@@ -3,9 +3,9 @@ import React, { Component, Fragment } from 'react';
 export default class Links extends Component {
 
     renderWhen = () => {
+
     const { data, filtered, arrLength, search, selected } = this.props;
-    if ((filtered && filtered.length) ||
-         (selected && filtered.length)) {
+    if ((filtered && filtered.length) || (selected && filtered.length)) {
         let filtArr = filtered || selected;
         return (
             <section className="links">
@@ -20,17 +20,23 @@ export default class Links extends Component {
                                       .substr(0,7);
                   return titleA > titleB ? 1 :
                          titleA < titleB ? -1 :
-                         0
+                                           0
                 }).map(item => {
                   return (
                     <li className="card" key={item.id}>
                       <div className="card-body">
                         <div className="card-title col-4">
-                          <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
+                          <img src={"https://www.google.com/s2/favicons?domain="
+                                     + item.url} alt=""
+                          />
                           <h2 className="card-title">{item.title}</h2>
                         </div>
                         <h4 className="card-text col-5">{item.description}</h4>
-                        <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
+                        <a
+                          className="card-link col-3"
+                          href={item.url}
+                          target="_blank">{item.url}
+                        </a>
                       </div>
                     </li>
                 )}
@@ -70,17 +76,24 @@ export default class Links extends Component {
                                     .substr(0,7);
                 return titleA > titleB ? 1 :
                        titleA < titleB ? -1 :
-                       0
+                                         0
                   }).map(item => {
                 return (
                   <li className="card" key={item.id}>
                     <div className="card-body">
                       <div className="card-title col-4">
-                        <img src={"https://www.google.com/s2/favicons?domain=" + item.url} alt="" />
+                        <img src={"https://www.google.com/s2/favicons?domain="
+                                   + item.url}
+                             alt=""
+                        />
                         <h2 className="card-title">{item.title}</h2>
                       </div>
                       <h4 className="card-text col-5">{item.description}</h4>
-                      <a className="card-link col-3" href={item.url} target="_blank">{item.url}</a>
+                      <a
+                         className="card-link col-3"
+                         href={item.url}
+                         target="_blank">{item.url}
+                      </a>
                     </div>
                   </li>
               )}
@@ -91,12 +104,12 @@ export default class Links extends Component {
     } else {
       return (
         <p>The developer who made this, who shall remain nameless, is not as
-           good at react as he/she/they claim to be. Also, their logic clearly sucks
-           bc the code should never get here ... =P
+           good at react as he/she/they claim to be. Also, their logic clearly
+           sucks bc the code should never get here ... =P
         </p>
       )
     }
-  }
+  };
 
   render() {
     return (
@@ -105,4 +118,4 @@ export default class Links extends Component {
       </Fragment>
     )
   }
-}
+};
