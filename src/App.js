@@ -203,7 +203,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    // const fetchAll =
     this.getAllLinks();
   }
 
