@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import Links from './Links.jsx';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -202,6 +203,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    // const fetchAll =
     this.getAllLinks();
   }
 
