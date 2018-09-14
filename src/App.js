@@ -106,7 +106,6 @@ class App extends Component {
                 onChange={this._updateSearch.bind(this)}
               />
               <div className="search-icon"></div>
-              <div className="add-icon"></div>
             </div>
           </header>
           <button className="toggle-btn down" onClick={this._showHide}></button>
@@ -156,12 +155,13 @@ class App extends Component {
                 name="search-input"
                 placeholder="Search All Links"
                 value={this.state.search}
-                onKeyPress={this._updateSearch.bind(this)}
+                onChange={this._updateSearch.bind(this)}
               />
-            <div className="search-icon"></div>
+              <div className="search-icon"></div>
             </div>
           </header>
-          <p>No data yet!</p>
+          <br />
+          <h2>No data yet - Waiting for Heroku DB to wake up!</h2>
         </Fragment>
     )}
   }
