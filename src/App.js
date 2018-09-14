@@ -85,29 +85,35 @@ class App extends Component {
     }
   }
 
+  Header = () => {
+    return (
+      <header className="navbar-dark bg-primary">
+        <div className="logo-div">
+          <div className="logo-and-h1">
+            <div className="link-icon"></div>
+            <h1>LiNKYe!</h1>
+          </div>
+        </div>
+        <div className="search-div">
+          <label htmlFor="search-input"></label>
+          <input
+            type="text"
+            name="search-input"
+            placeholder="Search All Links"
+            value={this.state.search}
+            onChange={this._updateSearch.bind(this)}
+          />
+          <div className="search-icon"></div>
+        </div>
+      </header>
+    )
+  }
+
   renderWhenFetched = () => {
     if (this.state.linkData) {
       return (
         <Fragment>
-          <header className="navbar-dark bg-primary">
-            <div className="logo-div">
-              <div className="logo-and-h1">
-                <div className="link-icon"></div>
-                <h1>LiNKYe!</h1>
-              </div>
-            </div>
-            <div className="search-div">
-              <label htmlFor="search-input"></label>
-              <input
-                type="text"
-                name="search-input"
-                placeholder="Search All Links"
-                value={this.state.search}
-                onChange={this._updateSearch.bind(this)}
-              />
-              <div className="search-icon"></div>
-            </div>
-          </header>
+          {this.Header()}
           <button className="toggle-btn down" onClick={this._showHide}></button>
           <section className="tag-section hide">
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -141,25 +147,7 @@ class App extends Component {
     } else {
       return (
         <Fragment>
-          <header>
-            <div className="logo-div">
-              <div className="logo-and-h1">
-                <div className="link-icon"></div>
-                <h1>LiNKYe!</h1>
-              </div>
-            </div>
-            <div className="search-div">
-              <label htmlFor="search-input"></label>
-              <input
-                type="text"
-                name="search-input"
-                placeholder="Search All Links"
-                value={this.state.search}
-                onChange={this._updateSearch.bind(this)}
-              />
-              <div className="search-icon"></div>
-            </div>
-          </header>
+          {this.Header()}
           <br />
           <h2>No data yet - Waiting for Heroku DB to wake up!</h2>
         </Fragment>
