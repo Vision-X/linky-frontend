@@ -167,8 +167,10 @@ class App extends Component {
   }
 
   _updateSearch = (event) => {
-    this.setState({ search: event.target.value.substr(0,20) },
-    this._updateFilteredArr);
+    if (this.state.linkData && this.state.linkData.length) {
+      this.setState({ search: event.target.value.substr(0,20) },
+      this._updateFilteredArr);
+    }
   }
 
   _updateFilteredArr = () => {
