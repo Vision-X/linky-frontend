@@ -57,8 +57,8 @@ class App extends Component {
               }
             }
           }
-          this.setState({ filteredArr: acc},
-          this.setState({ arrLength: acc.length}));
+          this.setState({ filteredArr: acc },
+          this.setState({ arrLength: acc.length }));
           return acc;
         }
       },[])
