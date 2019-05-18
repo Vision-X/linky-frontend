@@ -57,11 +57,13 @@ class App extends Component {
               }
             }
           }
-          this.setState({ filteredArr: acc },
-          this.setState({ arrLength: acc.length }));
+          this.setState({
+                          filteredArr: acc,
+                          arrLength: acc.length
+                        })
           return acc;
         }
-      },[])
+      }, [])
     } else {
         this.setState({ filteredArr: this.state.linkData[0] },
         this.setState({ arrLength: this.state.linkData[0].length }));

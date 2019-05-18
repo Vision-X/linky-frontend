@@ -234,6 +234,7 @@ ul {
 }
 
 .card-title img {
+  align-self: center;
   height: 20px;
   max-width: 20px;
   margin-right: 4%;
@@ -241,6 +242,7 @@ ul {
 }
 
 .card-title h2 {
+  align-self: center;
   font-size: 1.4rem;
   font-weight: 400;
 }
@@ -248,7 +250,10 @@ ul {
 .card-text {
   font-size: 1.2rem;
   font-style: italic;
-  text-overflow: hidden;
+  /* text-overflow: hidden; */
+  margin-bottom: 0;
+  /* min-height: 30px; */
+  align-self: center;
 }
 
 .card-link {
